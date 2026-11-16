@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tawassoul - Gestion des participants</title>
+    <link href="css.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="header">
+
+            <div class="brand">
+                <div class="brand-icon">
+                    <img src="" alt="">
+                </div>
+
+                <div>
+                    <span class="association">Association Tawassoul</span>
+                    <h1>Gestionnaire des participants</h1>
+                    <p>Gérez les inscriptions et les formations en un seul endroit.</p>
+                </div>
+            </div>
+
+        </header>
+
+
+        
+        <main class="main">
+            <aside class="sidebar">
+                <section class="card form-card">
+                    <h2>Ajouter un participant</h2>
+                    <p class="subtitle">Tous les champs sont obligatoires.</p>
+
+                    <form id="formulaire" novalidate>
+
+                        <div class="form-group">
+                            <label for="nom">Nom complet</label>
+
+                            <input
+                                type="text"id="nom"placeholder="Ex: Amine El Idrissi">
+                            <small id="erreurNom" class="error"></small>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Ex: amine@gmail.com"
+                            >
+
+                            <small id="erreurEmail" class="error"></small>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="formation">Formation</label>
+
+                            <select id="formation">
+                                <option value="Bureautique">Bureautique</option>
+                                <option value="Web" selected>Web</option>
+                                <option value="Langues">Langues</option>
+                            </select>
+                        </div>
+
+
+                        <button type="submit" class="btn-add">
+                            <span>＋</span> Ajouter
+                        </button>
+
+                    </form>
+
+                </section>
+
+                <section class="card search-card">
+
+                    <h2>Rechercher et filtrer</h2>
+
+                    <div class="search-box">
+                        
+
+                        <input
+                            type="text"
+                            id="recherche"
+                            placeholder="Rechercher un participant..."
+                        >
+                    </div>
+
+                    <div class="filter-buttons">
+
+                        <button class="filter-btn active" data-formation="Tous">
+                            Tous
+                        </button>
+
+                        <button class="filter-btn" data-formation="Bureautique">
+                            Bureautique
+                        </button>
+
+                        <button class="filter-btn" data-formation="Web">
+                            Web
+                        </button>
+
+                        <button class="filter-btn" data-formation="Langues">
+                            Langues
+                        </button>
+
+                    </div>
+
+                    <p class="filter-info" id="infoFiltre">
+                        0 participants dans toutes les formations
+                    </p>
+
+                </section>
+
+            </aside>
+            <section class="content">
+                <div class="stats">
+                    <div class="stat-card">
+                        <div>
+                            <p>Total participants :</p>
+                            <h2 id="total">0</h2>
+                        </div>
+                    </div>
+                    <div class="stat-card selected-stat">
+                        <div>
+                            <p>Sélectionnés :</p>
+                            <h2 id="totalSelection">0</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="card participants-card">
+                    <div class="list-header">
+                        <div>
+                            <h2>Participants</h2>
+                            <p id="selectionInfo">0 participants sélectionnés</p>
+                        </div>
+                        <span class="badge" id="totalVisible">0</span>
+                    </div>
+                    <ul id="liste"></ul>
+                    <div class="list-actions">
+                        <button id="supprimerSelection" class="btn-delete-selected">Supprimer la sélection</button>
+                        <small id="selectionCount">0 éléments sélectionnés</small>
+                    </div>
+                </section>
+
+
+                <section class="card empty-card" id="emptyState">
+                    <div>
+                        <p>Aperçu d'une recherche sans résultat</p>
+                        <h3>Aucun participant trouvé</h3>
+                        <span>Essayez un autre nom ou une autre formation.</span>
+                    </div>
+                </section>
+            </section>
+        </main>
+        <footer>
+            <p>© 2026 Association Tawassoul - Tous droits réservés.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
